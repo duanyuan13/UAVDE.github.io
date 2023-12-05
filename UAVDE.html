@@ -1,0 +1,262 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>The UAV Distance Estimation (UAVDE) dataset</title>
+    <style>
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: lighter;
+            font-variant: small-caps;
+        }
+​
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 32px;
+            font-style: italic;
+            font-weight: bold;
+        }
+​
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 32px;
+            font-style: oblique;
+            font-weight: bolder;
+        }
+​
+        p {
+            font: italic small-caps bold larger 仿宋;
+        }
+
+        .image-container img {
+            width: auto;
+            height: 270px;
+        }
+
+     
+        .no-border {
+            border: none !important;
+        }
+    </style>
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Video-Inpainting.&gt;
+&lt;meta name=" keywords"="">
+
+    <!-- Fonts and stuff -->
+    <link href="./resource/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./resource/project.css" media="screen">
+    <link rel="stylesheet" type="text/css" media="screen" href="./resource/iconize.css">
+    <script type="text/javascript" async="" src="./resource/ga.js.download"></script>
+    <script async="" src="./resource/prettify.js.download"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha384-fhYLJZkbU8EZ0R6AxN8I6YTILgGrhYZVXZ2j24MVKSTOvqtCPcd6yAevPl+4TuRW" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha384-XI4F3vouKmuyjRcSjWc2mNMaUZFby1FYX0GHoDcgD4TL8O6cWsDHdNp3Zu9SS3hR" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-22940424-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+</head>
+
+<body>
+    <div id="content">
+        <div id="content-inner">
+
+            <div class="section head">
+                <h1>UAVDE: UAV Distance Estimation dataset</h1>
+
+                <!-- <div class="authors">
+                    <a href="https://scholar.google.com/citations?user=KbWzCu4AAAAJ&hl=zh-CN">Jiafan Zhuang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://scholar.google.com/citations?user=_D3_rDwAAAAJ&hl=zh-CN">Duan Yuan</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a Rihong Yan>Rihong Yan</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a Xiangyu Dong>Xiangyu Dong</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a Yutao Zhou>Yutao Zhou</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a Weixin Huang>Weixin Huang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://scholar.google.com/citations?user=YFa1k84AAAAJ&hl=zh-CN">Wenji Li</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://scholar.google.com/citations?user=MHVdNSYAAAAJ&hl=zh-CN">Zhun Fan</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                </div> -->
+
+                <!-- <div class="affiliations">
+                    <sup>1</sup> <a href="http://imagelab.stu.edu.cn/index.jsp" target="_blank">Image Lab,ShanTou University</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                </div> -->
+
+                <div class="venue"></div>
+            </div>
+
+
+            <!-- <div class="section demo">
+                <br>
+                <center><iframe width="840" height="480" src="https://www.youtube.com/embed/DsyK0rXThcM">
+                    </iframe></center>
+                <br>
+                <center>
+                    <a href="https://www.dropbox.com/s/40rnzbhn1hgb58y/demo.mp4?dl=0"> Download
+                        Demo Video</a>
+                </center>
+            </div> -->
+
+            <br>
+            <center><img src="./figure/UAVDE.jpg" border="0" width="65%"></center>
+
+            <div class="section Abstract">
+                <h2>Abstract</h2>
+                <br>
+                <p>
+                    <b>The UAV Distance Estimation (UAVDE) dataset</b>
+                     is specifically curated for the purpose of UAV target distance estimation. 
+                     Rather than obtaining the dataset through simulation, all the images and distance measurements in the UAVDE dataset are derived from real-world scenarios. 
+                     This ensures that the dataset accurately represents the challenges and complexities encountered in actual UAV target distance estimation. 
+                     The following shows further information, 
+                </p>
+
+                <ul>
+                    <li><p><b>3,895</b> pairs of <b>stereo images</b>, each with its corresponding distance.</p>
+                    </li>
+                    <li><p>Each individual image is collected at a resolution of <b>$1280*720$</b> pixels.</p>
+                    </li>
+                    <li><p>The horizontal and vertical field of view (FOV) are set at <b>$22^\circ$ and $18^\circ$</b>, respectively.</p>
+                    </li>
+                    <li><p>The stereo camera has a baseline distance of <b>$406mm$</b>.</p>
+                    </li>
+                    <li><p>To capture the UAV targets accurately, the lenses used have a focal length of <b>$12mm$</b>, and the sensor size is <b>$3.75mm*3.75mm$</b>.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section Samples">
+                <h2>Samples</h2>
+                <br>
+                <center><img src="./figure/samples_2.png" border="0" width="100%"></center>
+                <br>
+            </div>
+
+            <div class="section Devices">
+                <h2>Devices</h2>
+                <p>We use the AMOV P600 as the recording UAV for this study. 
+                    It is equipped with both a stereo camera and an ultra-wideband (UWB) sensor. 
+                    The target UAV we focus on is the DJI M200. Please refer to the following figures for more details:</p>
+                    <div class="image-container">
+                        <center><img src="figure/UAV.png"></center>
+                    </div>
+            <!-- <ul>
+                <div class="image-container">
+                    <img src="figure/UAV1.png">
+                    <img src="figure/UAV2.png">
+                    <img src="figure/UAV3.png">
+                </div>            
+            </ul> -->
+            </div>
+
+            <div class="section Downloads">
+                <h2>Downloads</h2>
+                <ul>
+                <li class="grid">
+                  <div class="griditem">
+                <a href="https://drive.google.com/drive/folders/1UXWVsRp0B6B4Ke8m1FRvswd3LbF_IYWz?usp=sharing" target="_blank" class="imageLink"><img src="./figure/icon_zip.png"></a><br><br>
+                  Stereo Images
+                  </div>
+                </li>
+                <li class="grid">
+                    <div class="griditem">
+                  <a href="https://drive.google.com/file/d/1K-tiniv0g0m6qOTqg-eVNLVgAu3zEmcO/view?usp=sharing" target="_blank" class="imageLink"><img src="./figure/icon_csv.png"></a><br><br>
+                    Annotations
+                    </div>
+                  </li>
+                  
+                </ul>
+                <br>
+                <br>
+                <br>
+                If the above links are not accessable, you could download the dataset using <a href="https://pan.baidu.com/s/1ds6dM9WTKqlTcwphAAEYRQ?pwd=fiaq">Baidu Drive</a>(extract code:fiaq).
+                <br>
+                For more details of the dataset, please refer to the paper "<a href="https://arxiv.org/abs/2306.08939">Revisting Stereo Triangulation in UAV Distance Estimation</a>".
+                <br>
+                <b>Notes.</b> The dataset is a sample dataset for now. The complete dataset will be released after the paper is published.
+            </div>
+            
+            <div class="section contact">
+                <h2>Agreement</h2>
+                <ul>
+                <li>The UAVDE dataset is available for <b>non-commercial research purposes</b> only.</li>
+                <li>You agree <b>not to</b> reproduce, duplicate, copy, sell, trade, resell or exploit for any commercial purposes, any portion of the images and any portion of derived data.</li>
+                <li>You agree <b>not to</b> further copy, publish or distribute any portion of the UAVDE dataset. Except, for internal use at a single site within the same organization it is allowed to make copies of the dataset.</li>
+                <li>The Imagelab,Shoutou University reserves the right to terminate your access to the UAVDE dataset at any time.</li>
+                </ul>
+                </div>
+
+            <div class="section materials">
+                <h2>Materials</h2>
+                <center>
+                    <ul>
+                        <li class="grid">
+                            <div class="griditem">
+                                <a href="https://arxiv.org/abs/2306.08939" target="_blank" class="imageLink"><img
+                                        src="./figure/paper.png" width="50%"></a><br><br>
+                                <a href="https://arxiv.org/abs/2306.08939" target="_blank">Paper</a>
+                            </div>
+                        </li>
+                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                        <li class="grid">
+                            <div class="griditem">
+                                <a href="https://github.com/duanyuan13/PCM/"><img src="./figure/code.png"></a><br><br>
+                                <a href="https://github.com/duanyuan13/PCM/">Codes</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </center>
+            </div>
+
+            <br>
+
+        <div class="section citation">
+                <h2>Citation</h2>
+                <div class="section bibtex">
+                    <pre>@article{zhuang2023does,
+                title={Revisiting Stereo Triangulation in UAV Distance Estimation},
+                author={Jiafan Zhuang and Duan Yuan and Rihong Yan and Weixin Huang and <br />Wenji Li and Zhun Fan},
+                year={2023},
+                eprint={2306.08939},
+                archivePrefix={arXiv},
+                primaryClass={cs.CV}
+                }</pre>
+                </div>    
+        </div>
+
+        <div class="section contact">
+            <h2>Contact</h2>
+            <br>       
+            Please contact <a href="https://imagelab.stu.edu.cn/">Image Lab, Shantou University</a> for questions about the dataset.
+        </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
